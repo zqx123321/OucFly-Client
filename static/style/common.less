@@ -1,0 +1,81 @@
+@main-color: #5B8DF0;
+@sec-color: #EB9E52;
+@ok-color: #4DAEA4;
+@wrong-color: #FA6E79;
+
+@keyframes fade-in {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+
+.card {
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+  padding: 10px 20px;
+  animation: .3s ease fade-in;
+
+  .card-icon {
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
+  }
+
+  .card-title {
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    color: #666;
+    font-weight: bold;
+  }
+
+  .card-content {
+  }
+
+  .card-footer {
+    color: #666;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+
+    .footer-block {
+      display: flex;
+      align-items: center;
+      .icon {
+        height: 15px;
+        width: 15px;
+      }
+    }
+  }
+}
+
+.fake-text {
+  width: 100%;
+  height: 14px;
+  background-color: #eee;
+  margin-top: 10px;
+  overflow: hidden;
+  position: relative;
+
+  &:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    animation: blingbling 2s ease infinite;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+  }
+}

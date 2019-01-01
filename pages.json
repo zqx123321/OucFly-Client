@@ -1,0 +1,72 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "主页"
+			}
+		},
+		{
+			"path": "pages/login/index",
+			"style": {
+				"navigationBarTitleText": "登录"
+			}
+		},
+		
+		{
+			"path": "pages/grade/index",
+			"style": {
+				"navigationBarTitleText": "成绩"
+			}
+		},
+		{
+			"path": "pages/course/index",
+			"style": {
+				"navigationBarTitleText": "课表"
+			}
+		},
+		{
+			"path": "pages/exam/index",
+			"style": {
+				"navigationBarTitleText": "考试"
+			}
+		},
+		{
+			"path": "pages/coin/index",
+			"style": {
+				"navigationBarTitleText": "选课"
+			}
+		},
+		{
+			"path": "pages/user/index",
+			"style": {
+				"navigationBarTitleText": "寻人"
+			}
+		},
+		{
+			"path": "pages/search/index",
+			"style": {
+				"navigationBarTitleText": "搜课"
+			}
+		},
+		{
+			"path": "pages/order/index",
+			"style": {
+				"navigationBarTitleText": "排名"
+			}
+		},
+		{
+			"path": "pages/class/index",
+			"style": {
+				"navigationBarTitleText": "给分"
+			}
+		}
+
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "OucFly",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	}
+}
