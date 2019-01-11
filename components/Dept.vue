@@ -131,7 +131,6 @@
     @import "../static/style/common.less";
 
     .select-box {
-        padding: 15px 20px;
         margin-bottom: 5px;
         color: #5B8DF0;
         font-size: 18px;

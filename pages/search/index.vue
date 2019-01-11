@@ -2,11 +2,14 @@
     <div class="order-page">
         <Message></Message>
         <Loading v-if="loading"/>
-        <OrderHeader title="看看哪个课比较火" subtitle="输入课程名查询，可模糊搜索"/>
+        <div style="position: relative">
+            <OrderHeader title="看看哪个课比较火" subtitle="输入课程名查询，可模糊搜索"/>
 
-        <Search :is-super="true" :hint="hint" :check="false" :length="length" :select-data="selectData" :title="title"
-                :text="text"
-                :position="position" @search="search" :deepLength="deepLength"></Search>
+            <Search :is-super="true" :hint="hint" :check="false" :length="length" :select-data="selectData"
+                    :title="title"
+                    :text="text"
+                    :position="position" @search="search" :deepLength="deepLength"></Search>
+        </div>
         <div class="content">
             <div class="order-container">
 
@@ -41,7 +44,6 @@
     import Loading from '../../components/Loading'
     import Dept from '../../components/Dept'
     import api from '../../service/api'
-
 
 
     export default {
@@ -110,6 +112,11 @@
             },
             selectData() {
                 return [
+                    {
+                        value: '2019',
+                        label: '2019',
+                        children: this.xq
+                    },
                     {
                         value: '2018',
                         label: '2018',

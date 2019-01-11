@@ -2,22 +2,24 @@
     <div class="user-page">
         <Message/>
         <Loading v-if="loading"/>
-        <UserHeader title="有个妹子长得不错" subtitle="根据院系或者选课号查询名单"/>
+        <div style="position: relative">
+            <UserHeader title="有个妹子长得不错" subtitle="根据院系或者选课号查询名单"/>
 
-        <div class="top-wrapper">
-            <Dept @dept="dept" v-if="mode==='dept'"/>
+            <div class="top-wrapper">
+                <Dept @dept="dept" v-if="mode==='dept'"/>
 
-            <div v-else class="class-input card">
-                <span v-text="textClass" @click="showPicker"></span>
-                <input v-model="classCode" type="text" placeholder="请输入8位选课号" placeholder-style="color: #eee">
+                <div v-else class="class-input card">
+                    <span v-text="textClass" @click="showPicker"></span>
+                    <input v-model="classCode" type="text" placeholder="请输入8位选课号" placeholder-style="color: #eee">
+                </div>
+                <UserSearch :no-margin="true" :hint="hint" :select-data="selectData"
+                            :title="title" :text="text" :position="position" @search="search"
+                            :check="false" :mode="pickMode" @select="select"></UserSearch>
             </div>
-            <UserSearch :no-margin="true" :hint="hint" :select-data="selectData"
-                        :title="title" :text="text" :position="position" @search="search"
-                        :check="false" :mode="pickMode" @select="select"></UserSearch>
+            <ClassPicker ref="picker" :pickerValueDefault="positionClass"
+                         @onConfirm="selectXn" :pickerValueArray="selectDataClass"
+                         :title="title" :mode="classMode"></ClassPicker>
         </div>
-        <ClassPicker ref="picker" :pickerValueDefault="positionClass"
-                     @onConfirm="selectXn" :pickerValueArray="selectDataClass"
-                     :title="title" :mode="classMode"></ClassPicker>
         <div class="content">
             <NoDataCard v-if="nodata"/>
             <div v-else>
@@ -103,6 +105,11 @@
 
             selectDataClass() {
                 return [
+                    {
+                        value: '2019',
+                        label: '2019',
+                        children: this.xq
+                    },
                     {
                         value: '2018',
                         label: '2018',
@@ -258,8 +265,9 @@
 
         .top-wrapper {
             position: absolute;
-            width: 100%;
-            top: 132px;
+            bottom: 0;
+            left: 0;
+            right: 0;
         }
     }
 </style>

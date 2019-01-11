@@ -2,10 +2,12 @@
     <div class="order-page">
         <Message></Message>
         <Loading v-if="loading"/>
-        <OrderHeader title="反正我没有考试" subtitle="输入任意学号查询考试安排"/>
+        <div style="position: relative">
+            <OrderHeader title="反正我没有考试" subtitle="输入任意学号查询考试安排"/>
 
-        <Search :is-super="true" :hint="hint" :length="length" :select-data="selectData" :title="title" :text="text"
-                :position="position" @search="search" :deepLength="deepLength"></Search>
+            <Search :is-super="true" :hint="hint" :length="length" :select-data="selectData" :title="title" :text="text"
+                    :position="position" @search="search" :deepLength="deepLength"></Search>
+        </div>
         <div class="content">
             <div class="order-container">
 
@@ -76,6 +78,11 @@
         computed: {
             xq() {
                 return [
+                    {
+                        value: '2019',
+                        label: '2019',
+                        children: this.xq
+                    },
                     {
                         value: '0',
                         label: '夏季',

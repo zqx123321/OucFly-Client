@@ -2,11 +2,12 @@
     <div class="grade-page">
         <Message/>
         <Loading v-if="loading"/>
-        <GradeHeader title="今天你及格了吗" subtitle="输入任意学号查询成绩"/>
+        <div style="position: relative">
+            <GradeHeader title="今天你及格了吗" subtitle="输入任意学号查询成绩"/>
 
-        <GradeSearch :hint="hint" :length="length" :select-data="selectData" :title="title" :text="text"
-                     :position="position" @search="search"></GradeSearch>
-
+            <GradeSearch :hint="hint" :length="length" :select-data="selectData" :title="title" :text="text"
+                         :position="position" @search="search"></GradeSearch>
+        </div>
         <div class="content">
             <div class="coin-container">
                 <NoDataCard v-if="nodata"/>
@@ -52,7 +53,7 @@
                 hint: '输入学号搜索',
                 title: '选择学年学期',
                 text: '2017-秋季',
-                position: [1, 1],
+                position: [2, 1],
                 length: 11,
 
                 xq: [
@@ -92,6 +93,11 @@
                     label: '入学以来',
                     children: [{value: "", label: ""}]
                 },
+                    {
+                        value: '2019',
+                        label: '2019',
+                        children: this.xq
+                    },
                     {
                         value: '2018',
                         label: '2018',

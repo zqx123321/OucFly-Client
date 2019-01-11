@@ -2,12 +2,14 @@
     <div class="order-page">
         <Message></Message>
         <Loading v-if="loading"/>
-        <OrderHeader title="反正我是第一名" subtitle="选择专业查看排名"/>
-        <div class="top-wrapper">
-            <Dept @dept="dept"/>
-            <Search :no-margin="true" :show="false" :check="false"
-                    :select-data="selectData" :title="title" :text="text"
-                    :position="position" @search="search"></Search>
+        <div style="position: relative">
+            <OrderHeader title="反正我是第一名" subtitle="选择专业查看排名"/>
+            <div class="top-wrapper">
+                <Dept @dept="dept"/>
+                <Search :no-margin="true" :show="false" :check="false"
+                        :select-data="selectData" :title="title" :text="text"
+                        :position="position" @search="search"></Search>
+            </div>
         </div>
         <div class="content">
             <div class="order-container">
@@ -56,7 +58,7 @@
             return {
                 loading: false,
                 nodata: true,
-                position: [1, 1],
+                position: [2, 1],
                 grades: {
                     all: 0,
                     success: 0,
@@ -92,6 +94,11 @@
                         value: '0',
                         label: '入学以来',
                         children: [{value: "", label: ""}]
+                    },
+                    {
+                        value: '2019',
+                        label: '2019',
+                        children: this.xq
                     },
                     {
                         value: '2018',
@@ -185,8 +192,9 @@
 
         .top-wrapper {
             position: absolute;
-            width: 100%;
-            top: 135px;
+            bottom: 0;
+            left: 0;
+            right: 0;
         }
     }
 </style>

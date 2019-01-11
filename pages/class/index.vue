@@ -2,10 +2,12 @@
     <div class="order-page">
         <Message></Message>
         <Loading v-if="loading"/>
-        <OrderHeader title="好好学给分都高" subtitle="输入课程号查看给分"/>
+        <div style="position: relative">
+            <OrderHeader title="好好学给分都高" subtitle="输入课程号查看给分"/>
 
-        <Search :hint="hint" :length="length" :select-data="selectData" :title="title" :text="text"
-                      :position="position" @search="search"></Search>
+            <Search :hint="hint" :length="length" :select-data="selectData" :title="title" :text="text"
+                    :position="position" @search="search"></Search>
+        </div>
         <div class="content">
             <div class="order-container">
 
@@ -85,6 +87,11 @@
         computed: {
             selectData() {
                 return [
+                    {
+                        value: '2019',
+                        label: '2019',
+                        children: this.xq
+                    },
                     {
                         value: '2018',
                         label: '2018',

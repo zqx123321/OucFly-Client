@@ -105,8 +105,10 @@
     @import '../static/style/common.less';
 
     .search-box {
-        margin-top: -60px;
-        margin-bottom: 10px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
         color: @main-color;
         font-size: 18px;
         display: flex;
@@ -120,7 +122,6 @@
     }
 
     .search-box-no-margin {
-        margin-bottom: 10px;
         color: @main-color;
         font-size: 18px;
         display: flex;

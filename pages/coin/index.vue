@@ -2,10 +2,12 @@
     <div class="coin-page">
         <Message/>
         <Loading v-if="loading"></Loading>
-        <CourseHeader title="你敢说选课不必中？"
-                      subtitle="输入选课号查询选课币"/>
-        <CourseSearch :hint="hint" :length="length" :select-data="selectData" :title="title" :text="text"
-                      :position="position" @search="search"></CourseSearch>
+        <div style="position: relative">
+            <CourseHeader title="你敢说选课不必中？"
+                          subtitle="输入选课号查询选课币"/>
+            <CourseSearch :hint="hint" :length="length" :select-data="selectData" :title="title" :text="text"
+                          :position="position" @search="search"></CourseSearch>
+        </div>
         <div class="content">
             <div class="coin-container">
                 <!--<div class="loading-block" v-if="loading">-->
@@ -86,6 +88,11 @@
         computed: {
             selectData() {
                 return [
+                    {
+                        value: '2019',
+                        label: '2019',
+                        children: this.xq
+                    },
                     {
                         value: '2018',
                         label: '2018',

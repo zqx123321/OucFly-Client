@@ -2,10 +2,12 @@
     <div class="course-page">
         <Message/>
         <Loading v-if="loading"/>
-        <CourseHeader title="起床该上课了"
-                      subtitle="输入任意学号查询课表"/>
-        <CourseSearch :hint="hint" :length="length" :select-data="selectData" :title="title" :text="text"
-                      :position="position" @search="search"></CourseSearch>
+        <div style="position: relative">
+            <CourseHeader title="起床该上课了"
+                          subtitle="输入任意学号查询课表"/>
+            <CourseSearch :hint="hint" :length="length" :select-data="selectData" :title="title" :text="text"
+                          :position="position" @search="search"></CourseSearch>
+        </div>
         <div class="content">
             <div class="coin-container">
                 <div class="selector">
@@ -94,6 +96,11 @@
         computed: {
             selectData() {
                 return [
+                    {
+                        value: '2019',
+                        label: '2019',
+                        children: this.xq
+                    },
                     {
                         value: '2018',
                         label: '2018',
