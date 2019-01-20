@@ -81,7 +81,7 @@
                     {
                         value: '2019',
                         label: '2019',
-                        children: this.xq
+                        children: this.type
                     },
                     {
                         value: '0',

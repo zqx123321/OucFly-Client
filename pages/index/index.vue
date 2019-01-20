@@ -121,7 +121,7 @@
             this.loading = true
             let params = {
                 userCode: username,
-                xn: '2018',
+                xn: '2019',
                 xq: '1',
             };
             const res = await api.course(params)

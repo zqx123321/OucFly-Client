@@ -102,7 +102,7 @@
                 } else {
                     uni.showModal({
                         title: '提示',
-                        content: "用户名密码错误或者网络不佳",
+                        content: loginResult.errorMsg,
                     });
                 }
             },
